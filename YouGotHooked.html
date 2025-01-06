@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cybersecurity Conference</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: darkgreen;
+      background-color: white;
+      line-height: 1.6;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: transparent;
+      padding: 10px 20px;
+      position: absolute;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar span {
+      font-weight: 500;
+      color: white;
+      font-size: 1rem;
+    }
+
+    /* Hero Section */
+    .hero-section {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden; /* Ensures video stays within the section */
+    }
+
+    .hero-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Ensures video covers the screen without distortion */
+      z-index: -1;
+    }
+
+    .hero-section::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5); /* Adds a dark overlay for better text visibility */
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      color: white;
+    }
+
+    .hero-content {
+  opacity: 0; /* Initially hidden */
+  transform: translateY(20px); /* Slightly offset for smooth animation */
+  transition: opacity 1.5s ease, transform 1.5s ease; /* Smooth transition */
+}
+
+    .hero-section h1 {
+      font-size: 5rem;
+      font-weight: 500;
+      margin-bottom: 20px;
+      color: red;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-section p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      line-height: 1.5;
+      margin: 0 auto 20px;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+      margin-bottom: 4rem;
+    }
+
+    .cta-button {
+      margin-top: 1.5rem;
+      padding: 0.75rem 2rem;
+      font-size: 1rem;
+      color: rgb(0, 62, 22);
+      background-color: rgb(255, 255, 255);
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+
+    .cta-button:hover {
+      background-color: rgb(0, 62, 22);
+      color: white;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hero-section h1 {
+        font-size: 3rem;
+      }
+
+      .hero-section p {
+        font-size: 1rem;
+      }
+
+      .cta-button {
+        font-size: 0.9rem;
+        padding: 0.5rem 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <span>Cybersecurity Conference 2025</span>
+    </div>
+  </header>
+
+  <section class="hero-section">
+    <!-- Video Background -->
+    <video class="hero-video" autoplay muted loop>
+      <source src="Images/Background video.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <!-- Content -->
+    <div class="hero-content">
+      <h1>!DATA LEAKAGE!</h1>
+      <p>You’ve just been hacked. <br>Learn how to spot the signs and stop phishing attacks from happening to you!</p>
+      <a href="https://jessica071102.github.io/DontGetHooked/" class="cta-button">Visit the Phishing Booth</a>
+    </div>
+  </section>
+
+  <script>
+    // Seledocument.addEventListener("DOMContentLoaded", () => {
+  const heroContent = document.querySelector(".hero-content");
+
+setTimeout(() => {
+  heroContent.style.opacity = "1"; // Make visible
+  heroContent.style.transform = "translateY(0)"; // Reset offset
+}, 500); // Adjust delay as needed (500ms in this case)
+// });
+  </script>
+</body>
+</html>
